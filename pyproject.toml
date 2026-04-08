@@ -16,6 +16,7 @@ dev = [
     "mkdocs-material>=9.7.6",
     "mkdocstrings>=1.0.3",
     "mkdocstrings-python>=2.0.3",
+    "pytest-cov>=7.1.0",
 ]
 
 [tool.ruff]
@@ -36,5 +37,9 @@ warn_unused_configs = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra -q"
 pythonpath = ["."]
+addopts = [
+    "-ra -q",
+    "--cov=python_boilerplate",
+    "--cov-report=term-missing",
+    "--cov-fail-under=50",]
