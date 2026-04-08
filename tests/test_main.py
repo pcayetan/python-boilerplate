@@ -1,4 +1,4 @@
-from boilerplate import add
+from python_boilerplate import add
 
 
 def test_add() -> None:

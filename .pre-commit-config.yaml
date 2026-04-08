@@ -10,3 +10,11 @@ repos:
     rev: v1.9.0
     hooks:
       - id: mypy
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: uv run pytest
+        language: system
+        pass_filenames: false
