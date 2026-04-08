@@ -35,3 +35,9 @@ jobs:
 
       - name: Build docs
         run: uv run mkdocs build --strict
+  
+      - name: Publish docs
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
