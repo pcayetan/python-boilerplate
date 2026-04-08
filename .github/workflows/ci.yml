@@ -34,10 +34,4 @@ jobs:
         run: uv run pytest
 
       - name: Build docs
-        run: uv run mkdocs build --strict
-  
-      - name: Publish docs
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+        run: uv run mkdocs gh-deploy --site-dir site --remote-branch gh-pages --force
