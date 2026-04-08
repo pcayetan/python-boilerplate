@@ -34,4 +34,9 @@ jobs:
         run: uv run pytest
 
       - name: Build docs
-        run: uv run mkdocs gh-deploy --site-dir site --remote-branch gh-pages --force
+        run: uv run mkdocs build --strict
+  
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
