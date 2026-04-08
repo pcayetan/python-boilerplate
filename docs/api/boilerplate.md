@@ -1,3 +1,3 @@
 # Boilerplate API
 
-::: boilerplate
+::: python_boilerplate
